@@ -59,7 +59,7 @@
 - Dizziness model: 148 candidate variables
 - Abdominal pain model: 153 candidate variables
 - Types: demographics, vitals, labs, orders, visit times, risk factors
-- Preselection via bivariate tests (t-test or χ2), P < .10
+- Preselection via bivariate tests (t-test or $\chi^2$), P < .10
 - [Image placeholder: table/data columns]
 
 # Machine learning methods
