@@ -19,8 +19,23 @@ colortheme: whale
 ## Background: electronic triggers (e-triggers)
 
 - E-triggers: rules-based algorithms using EHR data to flag possible MODs
-- Limitations: low predictive value; built from a priori rules, may miss signals
+- Limitations: low predictive value; built from *a priori* rules, may miss signals
 - Opportunity: augment with data-driven ML
+
+## Electronic detection 1
+
+FIXME
+
+## Electronic detection 2
+
+FIXME
+
+## Electronic detection 3
+
+FIXME
+
+
+
 
 
 
@@ -30,6 +45,8 @@ colortheme: whale
 
 - Primary: Determine whether ML can enhance e-trigger performance to identify missed opportunities in diagnosis (MODs)
 - Emulate human reviewers at larger scale
+
+FIXME this is slide 3.
 
 ## Study design: overview
 
@@ -69,7 +86,7 @@ colortheme: whale
 
 - Algorithms: regularized logistic regression and random forest
 - Random forest with limited tree depth to reduce overfitting
-- Tools: Python 3.7.4; scipy, numpy, scikit-learn
+- Tools: Python 3.7.4; `scipy`, `numpy`, `scikit-learn`
 - Performance metric focus: positive predictive value (PPV) with 95% Wald CI
 
 
@@ -81,6 +98,8 @@ colortheme: whale
 - Rules-based flagged: 82 reviewed records
 - Reviewer-identified MODs: 39/82 (PPV 48%; 95% CI 37--58)
 - [Image placeholder: small bar chart]
+
+FIXME n.\ 10
 
 ## ML results: dizziness cohort
 
@@ -115,6 +134,8 @@ FIXME insert real table here.
 
 FIXME insert real figure here
 
+FIXME n.\ 15
+
 
 
 # Conclusions
@@ -132,13 +153,6 @@ FIXME insert real figure here
   - Monitor diagnostic safety at scale
   - Support quality improvement and research
 
-## Limitations
-
-- Time/resource cost to prepare structured variables
-- Small number of expert-labeled records limits model learning and test precision
-- Models used only structured data: may miss signals in clinical notes
-- Single-system (VA) data; requires external validation
-
 ## Future directions
 
 - Incorporate clinical note text (NLP) to capture richer signals
@@ -152,9 +166,47 @@ FIXME insert real figure here
 - Offers scalable approach to identify diagnostic errors and reduce manual review burden
 - Promising tool for research and quality improvement, pending broader validation
 
+FIXME n.\ 19
+
+
+
+# Limitations
+
+## Limitations
+
+- Time/resource cost to prepare structured variables
+- Small number of expert-labeled records limits model learning and test precision
+- Models used only structured data: may miss signals in clinical notes
+- Single-system (VA) data; requires external validation
+
+## Lim 2
+
+FIXME
+
+## LIM 3
+
+FIXME
+
+
 
 
 # Technical challenges
+
+## CHAL 1
+
+FIXME
+
+## CHAL 2
+
+FIXME
+
+## CHAL 3
+
+FIXME
+
+
+
+# Other BCM Informatics
 
 ## Appendix/Methods details (optional)
 
@@ -171,3 +223,11 @@ FIXME insert real figure here
 ## Questions
 
 - Contact/corresponding author info (add as needed)
+
+## 32
+
+FIXME
+
+## 33
+
+FIXME
