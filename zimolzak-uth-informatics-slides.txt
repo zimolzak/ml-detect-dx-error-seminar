@@ -12,6 +12,8 @@ colortheme: whale
 
 ## Background: problem
 
+FIXME Figure for paper title. Citation. consider QR.
+
 - Diagnostic errors cause substantial patient harm
 - Monitoring strategies are underdeveloped
 - Manual chart review is time-consuming and not scalable
