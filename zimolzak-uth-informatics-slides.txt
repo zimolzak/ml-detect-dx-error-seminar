@@ -1,7 +1,7 @@
 ---
-title: Electronic Health Record Data for Health Policy Research
+title: Machine Learning to Enhance Electronic Detection of Diagnostic Errors
 author: Andrew Zimolzak, MD, MMSc
-date: December 5, 2023
+date: November 19, 2025
 theme: Goettingen
 fonttheme: structurebold
 colortheme: whale
@@ -10,26 +10,17 @@ colortheme: whale
 
 # Introduction
 
-## Title slide: ML-enhanced e-triggers to detect missed diagnostic opportunities
-
-- Authors, affiliation, study period: ED visits 2016–2020 (VA national EHR)
-- One-line aim: Test whether ML can improve rules-based e-triggers and emulate human record review
-- [Image placeholder: study overview diagram]
-
 ## Background: problem
 
 - Diagnostic errors cause substantial patient harm
 - Monitoring strategies are underdeveloped
 - Manual chart review is time-consuming and not scalable
-- [Image placeholder: icon of clinic + warning]
 
 ## Background: electronic triggers (e-triggers)
 
 - E-triggers: rules-based algorithms using EHR data to flag possible MODs
 - Limitations: low predictive value; built from a priori rules, may miss signals
 - Opportunity: augment with data-driven ML
-- [Image placeholder: flow of EHR $\to$ e-trigger $\to$ reviewer]
-
 
 
 
@@ -39,7 +30,6 @@ colortheme: whale
 
 - Primary: Determine whether ML can enhance e-trigger performance to identify missed opportunities in diagnosis (MODs)
 - Emulate human reviewers at larger scale
-- [Image placeholder: target icon]
 
 ## Study design: overview
 
@@ -47,21 +37,19 @@ colortheme: whale
 - Two high-risk ED cohorts identified by rules-based e-triggers
 - Expert clinician review provided criterion labels (MOD vs no MOD)
 - ML models trained and tested on structured EHR variables
-- [Image placeholder: timeline/pipeline]
+- Flow of EHR $\to$ e-trigger $\to$ reviewer
 
 ## Cohorts: dizziness/stroke risk
 
 - Inclusion: ED visits for dizziness/vertigo + stroke risk factors
 - Outcome: hospitalization for stroke or TIA within 30 days after ED discharge
 - Timeframe: 2016--2020
-- [Image placeholder: head/brain icon]
 
 ## Cohorts: abdominal pain/fever
 
 - Inclusion: ED visits for abdominal pain + abnormal temperature
 - Outcome: hospitalization within 10 days after ED discharge
 - Examples of missed diagnoses: cholangitis, cholecystitis, infectious colitis
-- [Image placeholder: abdomen icon]
 
 ## Data sources & labeling
 
@@ -69,7 +57,6 @@ colortheme: whale
 - Random sample of trigger-positive records reviewed by trained clinicians using standardized instrument
 - Labeled records split into training and test sets
 - IRB approval; waiver of consent
-- [Image placeholder: clipboard/checklist]
 
 ## Variables used for ML
 
@@ -77,7 +64,6 @@ colortheme: whale
 - Abdominal pain model: 153 candidate variables
 - Types: demographics, vitals, labs, orders, visit times, risk factors
 - Preselection via bivariate tests (t-test or $\chi^2$), $P < 0.10$
-- [Image placeholder: table/data columns]
 
 ## Machine learning methods
 
@@ -85,7 +71,6 @@ colortheme: whale
 - Random forest with limited tree depth to reduce overfitting
 - Tools: Python 3.7.4; scipy, numpy, scikit-learn
 - Performance metric focus: positive predictive value (PPV) with 95% Wald CI
-- [Image placeholder: model icons]
 
 
 
@@ -118,20 +103,17 @@ colortheme: whale
 - Reported PPV 93% (95% CI 83--100)
 - [Image placeholder: confusion matrix sketch]
 
+
+
 ## Comparative table: rules vs ML (summary)
 
-- Dizziness:
-  - Rules-based PPV 48% (37--58)
-  - ML PPV 92% (84--100)
-- Abdominal pain:
-  - Rules-based PPV 30% (21--39)
-  - ML PPV 93% (83--100)
-- [Image placeholder: simple table image]
+FIXME insert real table here.
+
+
 
 ## Figure: study flow (conceptual)
 
-- Rules-based e-trigger $\to$ random sample $\to$ clinician review $\to$ labeled dataset $\to$ ML training/testing $\to$ enhanced classification
-- [Image placeholder: flow diagram]
+FIXME insert real figure here
 
 
 
@@ -142,7 +124,6 @@ colortheme: whale
 - ML substantially increased PPV of e-triggers for both cohorts
 - ML models approximated clinician labels with high accuracy
 - Enables more efficient, scalable monitoring of diagnostic errors
-- [Image placeholder: upward arrow/metrics]
 
 ## Practical implications
 
@@ -150,7 +131,6 @@ colortheme: whale
   - Prioritize cases for chart review
   - Monitor diagnostic safety at scale
   - Support quality improvement and research
-- [Image placeholder: hospital dashboard mockup]
 
 ## Limitations
 
@@ -158,7 +138,6 @@ colortheme: whale
 - Small number of expert-labeled records limits model learning and test precision
 - Models used only structured data: may miss signals in clinical notes
 - Single-system (VA) data; requires external validation
-- [Image placeholder: caution icon]
 
 ## Future directions
 
@@ -166,14 +145,13 @@ colortheme: whale
 - Increase expert-labeled training set size
 - Validate models in external, independent populations
 - Explore implementation workflows for real-time monitoring
-- [Image placeholder: roadmap]
 
 ## Takeaway/Conclusions
 
 - ML can markedly improve rules-based e-triggers for detecting missed diagnostic opportunities
 - Offers scalable approach to identify diagnostic errors and reduce manual review burden
 - Promising tool for research and quality improvement, pending broader validation
-- [Image placeholder: summary/checkmark]
+
 
 
 # Technical challenges
@@ -183,16 +161,13 @@ colortheme: whale
 - Statistical thresholds: bivariate preselection $P < 0.10$
 - Models trained on clinician-labeled gold standard; PPVs pooled across train/test due to small sample
 - CIs computed as 95% Wald intervals
-- [Image placeholder: methods icon]
 
 ## Acknowledgments & funding
 
 - VA data infrastructure and clinician reviewers
 - Baylor College of Medicine IRB approval; waiver of consent
 - Analysis timeframe: Apr 2020--May 2024
-- [Image placeholder: team icon]
 
 ## Questions
 
 - Contact/corresponding author info (add as needed)
-- [Image placeholder: question mark]
