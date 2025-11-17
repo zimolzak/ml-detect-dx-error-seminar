@@ -10,25 +10,30 @@ colortheme: whale
 
 # Introduction
 
-## Title slide — ML-enhanced e‑triggers to detect missed diagnostic opportunities
+## Title slide: ML-enhanced e-triggers to detect missed diagnostic opportunities
 
 - Authors, affiliation, study period: ED visits 2016–2020 (VA national EHR)
 - One-line aim: Test whether ML can improve rules-based e-triggers and emulate human record review
 - [Image placeholder: study overview diagram]
 
-## Background — problem
+## Background: problem
 
 - Diagnostic errors cause substantial patient harm
 - Monitoring strategies are underdeveloped
 - Manual chart review is time-consuming and not scalable
 - [Image placeholder: icon of clinic + warning]
 
-## Background — electronic triggers (e‑triggers)
+## Background: electronic triggers (e-triggers)
 
 - E-triggers: rules-based algorithms using EHR data to flag possible MODs
 - Limitations: low predictive value; built from a priori rules, may miss signals
 - Opportunity: augment with data-driven ML
-- [Image placeholder: flow of EHR → e-trigger → reviewer]
+- [Image placeholder: flow of EHR $\to$ e-trigger $\to$ reviewer]
+
+
+
+
+# Methods
 
 ## Study objective
 
@@ -36,22 +41,22 @@ colortheme: whale
 - Emulate human reviewers at larger scale
 - [Image placeholder: target icon]
 
-## Study design — overview
+## Study design: overview
 
 - Retrospective cohort analysis using VA national EHR (>20M individuals)
 - Two high-risk ED cohorts identified by rules-based e-triggers
 - Expert clinician review provided criterion labels (MOD vs no MOD)
 - ML models trained and tested on structured EHR variables
-- [Image placeholder: timeline / pipeline]
+- [Image placeholder: timeline/pipeline]
 
-## Cohorts — dizziness/stroke risk
+## Cohorts: dizziness/stroke risk
 
 - Inclusion: ED visits for dizziness/vertigo + stroke risk factors
 - Outcome: hospitalization for stroke or TIA within 30 days after ED discharge
-- Timeframe: 2016–2020
+- Timeframe: 2016--2020
 - [Image placeholder: head/brain icon]
 
-## Cohorts — abdominal pain/fever
+## Cohorts: abdominal pain/fever
 
 - Inclusion: ED visits for abdominal pain + abnormal temperature
 - Outcome: hospitalization within 10 days after ED discharge
@@ -71,7 +76,7 @@ colortheme: whale
 - Dizziness model: 148 candidate variables
 - Abdominal pain model: 153 candidate variables
 - Types: demographics, vitals, labs, orders, visit times, risk factors
-- Preselection via bivariate tests (t-test or $\chi^2$), P < .10
+- Preselection via bivariate tests (t-test or $\chi^2$), $P < 0.10$
 - [Image placeholder: table/data columns]
 
 ## Machine learning methods
@@ -86,49 +91,53 @@ colortheme: whale
 
 # Results
 
-## Label counts — dizziness cohort
+## Label counts: dizziness cohort
 
 - Rules-based flagged: 82 reviewed records
-- Reviewer-identified MODs: 39/82 (PPV 48%; 95% CI 37–58)
+- Reviewer-identified MODs: 39/82 (PPV 48%; 95% CI 37--58)
 - [Image placeholder: small bar chart]
 
-## ML results — dizziness cohort
+## ML results: dizziness cohort
 
 - Best ML (random forest) performance:
   - Correctly identified 36/39 true MODs
   - Correctly identified 40/43 negatives
-  - PPV 92% (95% CI 84–100)
+  - PPV 92% (95% CI 84--100)
 - ML reduced manual review burden substantially
 - [Image placeholder: confusion matrix sketch]
 
-## Label counts — abdominal pain cohort
+## Label counts: abdominal pain cohort
 
 - Rules-based flagged: 104 reviewed records
-- Reviewer-identified MODs: 31/104 (PPV 30%; 95% CI 21–39)
+- Reviewer-identified MODs: 31/104 (PPV 30%; 95% CI 21--39)
 - [Image placeholder: small bar chart]
 
-## ML results — abdominal pain cohort
+## ML results: abdominal pain cohort
 
 - ML correctly identified 26/31 true MODs and 71/73 negatives
-- Reported PPV 93% (95% CI 83–100)
+- Reported PPV 93% (95% CI 83--100)
 - [Image placeholder: confusion matrix sketch]
 
-## Comparative table — rules vs ML (summary)
+## Comparative table: rules vs ML (summary)
 
 - Dizziness:
-  - Rules-based PPV 48% (37–58)
-  - ML PPV 92% (84–100)
+  - Rules-based PPV 48% (37--58)
+  - ML PPV 92% (84--100)
 - Abdominal pain:
-  - Rules-based PPV 30% (21–39)
-  - ML PPV 93% (83–100)
+  - Rules-based PPV 30% (21--39)
+  - ML PPV 93% (83--100)
 - [Image placeholder: simple table image]
 
-## Figure — study flow (conceptual)
+## Figure: study flow (conceptual)
 
-- Rules-based e-trigger → random sample → clinician review → labeled dataset → ML training/testing → enhanced classification
+- Rules-based e-trigger $\to$ random sample $\to$ clinician review $\to$ labeled dataset $\to$ ML training/testing $\to$ enhanced classification
 - [Image placeholder: flow diagram]
 
-## Interpretation — key findings
+
+
+# Conclusions
+
+## Interpretation: key findings
 
 - ML substantially increased PPV of e-triggers for both cohorts
 - ML models approximated clinician labels with high accuracy
@@ -147,7 +156,7 @@ colortheme: whale
 
 - Time/resource cost to prepare structured variables
 - Small number of expert-labeled records limits model learning and test precision
-- Models used only structured data — may miss signals in clinical notes
+- Models used only structured data: may miss signals in clinical notes
 - Single-system (VA) data; requires external validation
 - [Image placeholder: caution icon]
 
@@ -159,16 +168,19 @@ colortheme: whale
 - Explore implementation workflows for real-time monitoring
 - [Image placeholder: roadmap]
 
-## Takeaway / Conclusions
+## Takeaway/Conclusions
 
 - ML can markedly improve rules-based e-triggers for detecting missed diagnostic opportunities
 - Offers scalable approach to identify diagnostic errors and reduce manual review burden
 - Promising tool for research and quality improvement, pending broader validation
 - [Image placeholder: summary/checkmark]
 
-## Appendix / Methods details (optional)
 
-- Statistical thresholds: bivariate preselection P < .10
+# Technical challenges
+
+## Appendix/Methods details (optional)
+
+- Statistical thresholds: bivariate preselection $P < 0.10$
 - Models trained on clinician-labeled gold standard; PPVs pooled across train/test due to small sample
 - CIs computed as 95% Wald intervals
 - [Image placeholder: methods icon]
@@ -177,10 +189,10 @@ colortheme: whale
 
 - VA data infrastructure and clinician reviewers
 - Baylor College of Medicine IRB approval; waiver of consent
-- Analysis timeframe: Apr 2020–May 2024
+- Analysis timeframe: Apr 2020--May 2024
 - [Image placeholder: team icon]
 
 ## Questions
 
-- Contact / corresponding author info (add as needed)
+- Contact/corresponding author info (add as needed)
 - [Image placeholder: question mark]
