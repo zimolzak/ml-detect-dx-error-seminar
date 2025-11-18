@@ -1,14 +1,37 @@
 ---
 title: Machine Learning to Enhance Electronic Detection of Diagnostic Errors
 author: Andrew Zimolzak, MD, MMSc
+institute:
+- Baylor College of Medicine
+- Department of Medicine, section of Health Services Research
+- Michael E.\ DeBakey VA Medical Center
 date: November 19, 2025
 theme: Goettingen
 fonttheme: structurebold
 colortheme: whale
+aspectratio: 149
 ---
 
 
 # Introduction
+
+
+
+
+## Background: electronic triggers (e-triggers)
+
+People have studied management errors. Example.
+
+- E-triggers: rules-based algorithms using EHR data to flag possible MODs
+- Limitations: low predictive value; built from *a priori* rules, may miss signals
+- Opportunity: augment with data-driven ML
+
+
+## diagnosis
+
+whole slide for dx process?
+
+
 
 ## Background: problem
 
@@ -18,19 +41,13 @@ FIXME Figure for paper title. Citation. consider QR.
 - Monitoring strategies are underdeveloped
 - Manual chart review is time-consuming and not scalable
 
-## Background: electronic triggers (e-triggers)
 
-- E-triggers: rules-based algorithms using EHR data to flag possible MODs
-- Limitations: low predictive value; built from *a priori* rules, may miss signals
-- Opportunity: augment with data-driven ML
 
-## Electronic detection 1
-
-FIXME
 
 ## Electronic detection 2
 
 FIXME
+
 
 ## Electronic detection 3
 
@@ -225,6 +242,10 @@ FIXME
 ## Questions
 
 - Contact/corresponding author info (add as needed)
+
+
+
+
 
 ## 32
 
