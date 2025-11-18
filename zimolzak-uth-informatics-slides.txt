@@ -39,14 +39,6 @@ National Academies Press. https://doi.org/10.17226/21794.
 - Manual chart review is time-consuming and not scalable
 
 
-## Paper
-
-![paper title](img/papertitle.png)\
-
-*JAMA Netw Open.* 2024;7(9):e2431982.
- doi:10.1001/jamanetworkopen.2024.31982
-
-
 ## Electronic detection 2
 
 FIXME
@@ -57,12 +49,16 @@ FIXME
 FIXME
 
 
+## Objectives
+
+![paper title](img/papertitle.png)\
+
+- Determine whether ML can enhance e-trigger performance to identify missed opportunities in diagnosis (MODs)
+- Emulate human reviewers at larger scale. (*Detect* possible MOD afterwards. *Not* predict MOD in the ED!)
+
+
 # Methods
 
-## Study objective
-
-- Primary: Determine whether ML can enhance e-trigger performance to identify missed opportunities in diagnosis (MODs)
-- Emulate human reviewers at larger scale
 
 
 ## Study design: overview
@@ -148,7 +144,7 @@ FIXME
 ## Comparative table: rules vs ML (summary)
 
 E-trigger            | True+/Total | PPV (CI)
----------------------|:------------------:|---------
+---------------------|:-----------:|---------
 **Dizziness**                | |
 \quad{} Rules-based positive for MOD | 39/82  | **48%** (37--58)
 \quad{} ML positive for MOD          | 36/39  | **92%** (84--100)
@@ -157,10 +153,6 @@ E-trigger            | True+/Total | PPV (CI)
 \quad{} Rules-based positive for MOD | 31/104 | **30%** (21--39)
 \quad{} ML positive for MOD          | 26/28  | **93%** (83--100)
 \quad{} ML negative for MOD          | 5/76   | NA
-
-
-
-
 
 
 ## Example study flow diagram
