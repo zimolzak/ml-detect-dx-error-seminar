@@ -2,8 +2,8 @@
 title: Machine Learning to Enhance Electronic Detection of Diagnostic Errors
 author: Andrew Zimolzak, MD, MMSc
 institute:
+- Department of Medicine, Section of Health Services Research
 - Baylor College of Medicine
-- Department of Medicine, section of Health Services Research
 - Michael E.\ DeBakey VA Medical Center
 date: November 19, 2025
 theme: Goettingen
@@ -12,11 +12,7 @@ colortheme: whale
 aspectratio: 149
 ---
 
-
 # Introduction
-
-
-
 
 ## Background: electronic triggers (e-triggers)
 
@@ -29,19 +25,18 @@ People have studied management errors. Example.
 
 ## diagnosis
 
-whole slide for dx process?
-
+whole slide for dx process? FIGURE
 
 
 ## Background: problem
 
-FIXME Figure for paper title. Citation. consider QR.
+FIGURE for paper title. Citation.
+
+FIGURE consider QR.
 
 - Diagnostic errors cause substantial patient harm
 - Monitoring strategies are underdeveloped
 - Manual chart review is time-consuming and not scalable
-
-
 
 
 ## Electronic detection 2
@@ -54,10 +49,6 @@ FIXME
 FIXME
 
 
-
-
-
-
 # Methods
 
 ## Study objective
@@ -65,7 +56,6 @@ FIXME
 - Primary: Determine whether ML can enhance e-trigger performance to identify missed opportunities in diagnosis (MODs)
 - Emulate human reviewers at larger scale
 
-FIXME this is slide 3.
 
 ## Study design: overview
 
@@ -75,17 +65,20 @@ FIXME this is slide 3.
 - ML models trained and tested on structured EHR variables
 - Flow of EHR $\to$ e-trigger $\to$ reviewer
 
+
 ## Cohorts: dizziness/stroke risk
 
 - Inclusion: ED visits for dizziness/vertigo + stroke risk factors
 - Outcome: hospitalization for stroke or TIA within 30 days after ED discharge
 - Timeframe: 2016--2020
 
+
 ## Cohorts: abdominal pain/fever
 
 - Inclusion: ED visits for abdominal pain + abnormal temperature
 - Outcome: hospitalization within 10 days after ED discharge
 - Examples of missed diagnoses: cholangitis, cholecystitis, infectious colitis
+
 
 ## Data sources & labeling
 
@@ -94,6 +87,7 @@ FIXME this is slide 3.
 - Labeled records split into training and test sets
 - IRB approval; waiver of consent
 
+
 ## Variables used for ML
 
 - Dizziness model: 148 candidate variables
@@ -101,13 +95,13 @@ FIXME this is slide 3.
 - Types: demographics, vitals, labs, orders, visit times, risk factors
 - Preselection via bivariate tests (t-test or $\chi^2$), $P < 0.10$
 
+
 ## Machine learning methods
 
 - Algorithms: regularized logistic regression and random forest
 - Random forest with limited tree depth to reduce overfitting
 - Tools: Python 3.7.4; `scipy`, `numpy`, `scikit-learn`
 - Performance metric focus: positive predictive value (PPV) with 95% Wald CI
-
 
 
 # Results
@@ -118,7 +112,6 @@ FIXME this is slide 3.
 - Reviewer-identified MODs: 39/82 (PPV 48%; 95% CI 37--58)
 - [Image placeholder: small bar chart]
 
-FIXME n.\ 10
 
 ## ML results: dizziness cohort
 
@@ -129,11 +122,13 @@ FIXME n.\ 10
 - ML reduced manual review burden substantially
 - [Image placeholder: confusion matrix sketch]
 
+
 ## Label counts: abdominal pain cohort
 
 - Rules-based flagged: 104 reviewed records
 - Reviewer-identified MODs: 31/104 (PPV 30%; 95% CI 21--39)
 - [Image placeholder: small bar chart]
+
 
 ## ML results: abdominal pain cohort
 
@@ -142,19 +137,14 @@ FIXME n.\ 10
 - [Image placeholder: confusion matrix sketch]
 
 
-
 ## Comparative table: rules vs ML (summary)
 
 FIXME insert real table here.
 
 
-
 ## Figure: study flow (conceptual)
 
 FIXME insert real figure here
-
-FIXME n.\ 15
-
 
 
 # Conclusions
@@ -165,12 +155,14 @@ FIXME n.\ 15
 - ML models approximated clinician labels with high accuracy
 - Enables more efficient, scalable monitoring of diagnostic errors
 
+
 ## Practical implications
 
 - Health systems can use ML-enhanced e-triggers to:
   - Prioritize cases for chart review
   - Monitor diagnostic safety at scale
   - Support quality improvement and research
+
 
 ## Future directions
 
@@ -179,14 +171,12 @@ FIXME n.\ 15
 - Validate models in external, independent populations
 - Explore implementation workflows for real-time monitoring
 
+
 ## Takeaway/Conclusions
 
 - ML can markedly improve rules-based e-triggers for detecting missed diagnostic opportunities
 - Offers scalable approach to identify diagnostic errors and reduce manual review burden
 - Promising tool for research and quality improvement, pending broader validation
-
-FIXME n.\ 19
-
 
 
 # Limitations
@@ -198,15 +188,15 @@ FIXME n.\ 19
 - Models used only structured data: may miss signals in clinical notes
 - Single-system (VA) data; requires external validation
 
+
 ## Lim 2
 
 FIXME
 
+
 ## LIM 3
 
 FIXME
-
-
 
 
 # Technical challenges
@@ -215,14 +205,15 @@ FIXME
 
 FIXME
 
+
 ## CHAL 2
 
 FIXME
 
+
 ## CHAL 3
 
 FIXME
-
 
 
 # Other BCM Informatics
@@ -233,23 +224,23 @@ FIXME
 - Models trained on clinician-labeled gold standard; PPVs pooled across train/test due to small sample
 - CIs computed as 95% Wald intervals
 
+
 ## Acknowledgments & funding
 
 - VA data infrastructure and clinician reviewers
 - Baylor College of Medicine IRB approval; waiver of consent
 - Analysis timeframe: Apr 2020--May 2024
 
+
 ## Questions
 
 - Contact/corresponding author info (add as needed)
 
 
-
-
-
 ## 32
 
 FIXME
+
 
 ## 33
 
