@@ -2,7 +2,7 @@
 
 files = sbmi-talk-2025-abstract.pdf zimolzak-uth-informatics-slides.pdf
 
-imgdeps = img/dxprocess.png img/studyflow-crop.png
+imgdeps = img/dxprocess.png img/studyflow-crop.png img/papertitle.png
 
 all: $(files)
 

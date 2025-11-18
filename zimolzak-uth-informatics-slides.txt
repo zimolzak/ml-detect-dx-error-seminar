@@ -27,20 +27,24 @@ People have studied management errors. Example.
 
 ![diagnostic process](img/dxprocess.png)\
 
-[^nasem]: National Academies of Sciences, Engineering, and Medicine 2015. *Improving
-Diagnosis in Health Care.* Washington, DC: The National Academies Press.
-https://doi.org/10.17226/21794.
+[^nasem]: National Academies of Sciences, Engineering, and Medicine
+2015. *Improving Diagnosis in Health Care.* Washington, DC: The
+National Academies Press. https://doi.org/10.17226/21794.
 
 
 ## Background: problem
 
-FIGURE for paper title. Citation.
-
-FIGURE consider QR.
-
 - Diagnostic errors cause substantial patient harm
 - Monitoring strategies are underdeveloped
 - Manual chart review is time-consuming and not scalable
+
+
+## Paper
+
+![paper title](img/papertitle.png)\
+
+*JAMA Netw Open.* 2024;7(9):e2431982.
+ doi:10.1001/jamanetworkopen.2024.31982
 
 
 ## Electronic detection 2
