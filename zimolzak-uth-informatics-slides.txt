@@ -147,16 +147,16 @@ FIXME
 
 ## Comparative table: rules vs ML (summary)
 
-E-trigger           |  Reviewer / Trigger  |  PPV (CI)
-----------------------|------------------------------|---------
-Dizziness | |
-Rules-based positive for MOD  | 39/82  | 48 (37-58)
-ML positive for MOD  | 36/39  | 92 (84-100)
-ML negative for MOD  | 3/43  | NA
-Abdominal pain | |
-Rules-based positive for MOD  | 31/104  | 30 (21-39)
-ML positive for MOD  | 26/28  | 93 (83-100)
-ML negative for MOD  | 5/76  | NA
+E-trigger            | True+/Total | PPV (CI)
+---------------------|:------------------:|---------
+**Dizziness**                | |
+\quad{} Rules-based positive for MOD | 39/82  | **48%** (37--58)
+\quad{} ML positive for MOD          | 36/39  | **92%** (84--100)
+\quad{} ML negative for MOD          | 3/43   | NA
+**Abdominal pain**           | |
+\quad{} Rules-based positive for MOD | 31/104 | **30%** (21--39)
+\quad{} ML positive for MOD          | 26/28  | **93%** (83--100)
+\quad{} ML negative for MOD          | 5/76   | NA
 
 
 
