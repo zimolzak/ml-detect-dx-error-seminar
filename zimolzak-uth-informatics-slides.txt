@@ -23,9 +23,13 @@ People have studied management errors. Example.
 - Opportunity: augment with data-driven ML
 
 
-## diagnosis
+## Diagnostic process[^nasem]
 
-whole slide for dx process? FIGURE
+![diagnostic process](img/dxprocess.png)\
+
+[^nasem]: National Academies of Sciences, Engineering, and Medicine 2015. *Improving
+Diagnosis in Health Care.* Washington, DC: The National Academies Press.
+https://doi.org/10.17226/21794.
 
 
 ## Background: problem
@@ -142,9 +146,9 @@ FIXME
 FIXME insert real table here.
 
 
-## Figure: study flow (conceptual)
+## Example study flow diagram
 
-FIXME insert real figure here
+![study flow](img/studyflow-crop.png)\
 
 
 # Conclusions
