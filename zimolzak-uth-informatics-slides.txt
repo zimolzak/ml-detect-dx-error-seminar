@@ -120,17 +120,23 @@ in the ED!
 
 ## E-trigger 1: dizziness + stroke risk factors
 
-- Inclusion: ED visits for dizziness/vertigo + stroke risk factors
+- Inclusion: ED visits for dizziness/vertigo, in patients with stroke
+  risk factors.[^risk] (And discharged from ED to home)
 
-- Outcome: hospitalization for stroke or TIA within 30 days after ED
+- Outcome: hospitalization *for stroke or TIA* within 30 days after ED
   discharge
 
 - Timeframe: 2016--2020
 
+[^risk]: Two or more of: prior stroke, smoker, cholesterol, diabetes,
+hypertension, carotid stenosis, atrial fibrillation, aneurysm,
+coronary disease
+
 
 ## E-trigger 2: abdominal pain + vitals
 
-- Inclusion: ED visits for abdominal pain + abnormal temperature
+- Inclusion: ED visits for abdominal pain, and patient has abnormal
+  temperature. (And discharged from ED to home)
 
 - Outcome: hospitalization within 10 days after ED discharge
 
@@ -140,7 +146,7 @@ in the ED!
 
 ## Data sources & labeling
 
-- Data: Structured EHR from index ED visit and subsequent hospital
+- Data: Structured EHR from index ED visit **and** subsequent hospital
   data
 
 - Random sample of trigger-positive records reviewed by trained
@@ -375,9 +381,11 @@ SELECT * FROM LAB_RESULTS WHERE PatientSSN = 123456789
 
 ## Technical challenges
 
-- Multiple "hops" to log on remotely (especially important during pandemic)
+- Multiple "hops" to log on remotely (especially important during
+  pandemic)
 
-- Limited hardware capabilities. This is evolving, but additional access request is/was needed for different hardware environment.
+- Limited hardware capabilities. This is evolving, but additional
+  access request is/was needed for different hardware environment.
 
 
 ## Thank you! and "See also"
