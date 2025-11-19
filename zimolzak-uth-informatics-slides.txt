@@ -72,11 +72,16 @@ FIXME ref 2
 
 ## Study design: overview
 
-- Retrospective cohort analysis using VA national EHR (>20M individuals)
+- Retrospective cohort analysis using VA national EHR (>20M
+  patients)
+
 - Two high-risk ED cohorts identified by rules-based e-triggers
+
 - Expert clinician review provided criterion labels (MOD vs no MOD)
+
 - ML models trained and tested on structured EHR variables
-- Flow of EHR $\to$ e-trigger $\to$ reviewer
+
+- Flow: EHR $\to$ e-trigger $\to$ reviewer
 
 
 ## E-trigger 1: dizziness + stroke risk
@@ -301,7 +306,9 @@ VA data infrastructure and clinician reviewers
 
 ## Questions
 
-Contact/corresponding author info (add as needed)
+zimolzak@bcm.edu
+
+github.com/zimolzak/ml-detect-dx-error-seminar
 
 
 ## 32
