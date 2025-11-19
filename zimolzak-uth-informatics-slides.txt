@@ -16,11 +16,9 @@ aspectratio: 149
 
 ## Background: electronic triggers (e-triggers)
 
-People have studied management errors. Example.
+People have studied management errors. Example. FIXME
 
-- E-triggers: rules-based algorithms using EHR data to flag possible MODs
-- Limitations: low predictive value; built from *a priori* rules, may miss signals
-- Opportunity: augment with data-driven ML
+- What about diagnosis?
 
 
 ## Diagnostic process[^national]
@@ -32,21 +30,30 @@ People have studied management errors. Example.
 National Academies Press. https://doi.org/10.17226/21794.
 
 
+## Diagnostic e-triggers
+
+E-triggers:
+: rules-based algorithms using EHR data to flag possible MODs
+
+- Limitations: low predictive value; built from *a priori* rules, may miss signals
+
+- Opportunity: Augment with data-driven ML
+
+
 ## Background: problem
 
 - Diagnostic errors cause substantial patient harm
+
 - Monitoring strategies are underdeveloped
+
 - Manual chart review is time-consuming and not scalable
 
-
-## Electronic detection 2
-
-FIXME
+FIXME reference 1
 
 
-## Electronic detection 3
+## Electronic detection (more)
 
-FIXME
+FIXME ref 2
 
 
 ## Objectives
@@ -54,6 +61,7 @@ FIXME
 ![paper title](img/papertitle.png)\
 
 - Determine whether ML can enhance e-trigger performance to identify missed opportunities in diagnosis (MODs)
+
 - Emulate human reviewers at larger scale. (*Detect* possible MOD afterwards. *Not* predict MOD in the ED!)
 
 
@@ -68,42 +76,55 @@ FIXME
 - Flow of EHR $\to$ e-trigger $\to$ reviewer
 
 
-## Cohorts: dizziness/stroke risk
+## E-trigger 1: dizziness + stroke risk
 
 - Inclusion: ED visits for dizziness/vertigo + stroke risk factors
+
 - Outcome: hospitalization for stroke or TIA within 30 days after ED discharge
+
 - Timeframe: 2016--2020
 
 
-## Cohorts: abdominal pain/fever
+## E-trigger 2: abdominal pain + vitals
 
 - Inclusion: ED visits for abdominal pain + abnormal temperature
+
 - Outcome: hospitalization within 10 days after ED discharge
+
 - Examples of missed diagnoses: cholangitis, cholecystitis, infectious colitis
 
 
 ## Data sources & labeling
 
 - Data: Structured EHR from index ED visit and subsequent hospital data
+
 - Random sample of trigger-positive records reviewed by trained clinicians using standardized instrument
+
 - Labeled records split into training and test sets
+
 - IRB approval; waiver of consent
 
 
 ## Variables used for ML
 
 - Dizziness model: 148 candidate variables
+
 - Abdominal pain model: 153 candidate variables
+
 - Types: demographics, vitals, labs, orders, visit times, risk factors
+
 - Preselection via bivariate tests (t-test or $\chi^2$), $P < 0.10$
 
 
 ## Machine learning methods
 
 - Algorithms: regularized logistic regression and random forest
+
 - Random forest with limited tree depth to reduce overfitting
+
 - Tools: Python 3.7.4; `scipy`, `numpy`, `scikit-learn`
-- Performance metric focus: positive predictive value (PPV) with 95% Wald CI
+
+- Performance metrics: positive predictive value (PPV) with 95% Wald CI
 
 
 # Results
@@ -111,31 +132,40 @@ FIXME
 ## Label counts: dizziness cohort
 
 - Rules-based flagged: 82 reviewed records
+
 - Reviewer-identified MODs: 39/82 (PPV 48%; 95% CI 37--58)
+
 - [Image placeholder: small bar chart]
 
 
 ## ML results: dizziness cohort
 
 - Best ML (random forest) performance:
+
   - Correctly identified 36/39 true MODs
+  
   - Correctly identified 40/43 negatives
+  
   - PPV 92% (95% CI 84--100)
+
 - ML reduced manual review burden substantially
-- [Image placeholder: confusion matrix sketch]
 
 
 ## Label counts: abdominal pain cohort
 
 - Rules-based flagged: 104 reviewed records
+
 - Reviewer-identified MODs: 31/104 (PPV 30%; 95% CI 21--39)
+
 - [Image placeholder: small bar chart]
 
 
 ## ML results: abdominal pain cohort
 
 - ML correctly identified 26/31 true MODs and 71/73 negatives
+
 - Reported PPV 93% (95% CI 83--100)
+
 - [Image placeholder: confusion matrix sketch]
 
 
@@ -163,30 +193,40 @@ E-trigger            | True+/Total | PPV (CI)
 ## Interpretation: key findings
 
 - ML substantially increased PPV of e-triggers for both cohorts
+
 - ML models approximated clinician labels with high accuracy
+
 - Enables more efficient, scalable monitoring of diagnostic errors
 
 
 ## Practical implications
 
-- Health systems can use ML-enhanced e-triggers to:
-  - Prioritize cases for chart review
-  - Monitor diagnostic safety at scale
-  - Support quality improvement and research
+Health systems can use ML-enhanced e-triggers to:
+
+- Prioritize cases for chart review
+
+- Monitor diagnostic safety at scale
+
+- Support quality improvement and research
 
 
 ## Future directions
 
 - Incorporate clinical note text (NLP) to capture richer signals
+
 - Increase expert-labeled training set size
+
 - Validate models in external, independent populations
+
 - Explore implementation workflows for real-time monitoring
 
 
 ## Takeaway/Conclusions
 
 - ML can markedly improve rules-based e-triggers for detecting missed diagnostic opportunities
+
 - Offers scalable approach to identify diagnostic errors and reduce manual review burden
+
 - Promising tool for research and quality improvement, pending broader validation
 
 
@@ -195,8 +235,11 @@ E-trigger            | True+/Total | PPV (CI)
 ## Limitations
 
 - Time/resource cost to prepare structured variables
+
 - Small number of expert-labeled records limits model learning and test precision
+
 - Models used only structured data: may miss signals in clinical notes
+
 - Single-system (VA) data; requires external validation
 
 
@@ -232,20 +275,20 @@ FIXME
 ## Appendix/Methods details (optional)
 
 - Statistical thresholds: bivariate preselection $P < 0.10$
+
 - Models trained on clinician-labeled gold standard; PPVs pooled across train/test due to small sample
+
 - CIs computed as 95% Wald intervals
 
 
 ## Acknowledgments & funding
 
 - VA data infrastructure and clinician reviewers
-- Baylor College of Medicine IRB approval; waiver of consent
-- Analysis timeframe: Apr 2020--May 2024
 
 
 ## Questions
 
-- Contact/corresponding author info (add as needed)
+Contact/corresponding author info (add as needed)
 
 
 ## 32
