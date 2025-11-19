@@ -19,16 +19,16 @@ aspectratio: 149
 Management errors are often what springs to mind when discussing
 medical error.
 
-- *E.g.,* many studies of adverse drug events[^classen] and medication
+- *E.g.,* many studies of adverse drug events[^Classen] and medication
 errors[^bates]^,^[^koppelRole]
 
 - Or "retract and reorder" as a signal of
-wrong-patient electronic orders.[^mgt]^,^[^rapid]
+wrong-patient electronic orders.[^management]^,^[^rapid]
 
 - But what if the treatment, *etc.* is ordered correctly, but the
   **diagnosis** was wrong?
 
-[^classen]: Classen *et al. JAMA.* 1991;266(20):2847--2851.
+[^Classen]: Classen *et al. JAMA.* 1991;266(20):2847--2851.
 
 [^koppelRole]: Koppel *et al. JAMA.* 2005;293(10):1197--1203.
 
@@ -36,7 +36,7 @@ wrong-patient electronic orders.[^mgt]^,^[^rapid]
 
 [^rapid]: Koppel *et al. JAMIA.* 2008;15(4):461--465.
 
-[^mgt]: Adelman *et al. JAMIA.* 2012;20(2):305--310.
+[^management]: Adelman *et al. JAMIA.* 2012;20(2):305--310.
 
 
 ## The diagnostic process[^national]
@@ -344,14 +344,14 @@ Air-gapped research analysis environment: no Internet.
 This was before Melax Tech (as far as I know!)
 
 
-## Techincal: source control
+## Technical: source control
 
 - Source code control, preservation, reproducibility: learned a lot about `git-bundle`!
 
 - Meticulous review for sensitive information in `ipynb` files. Is there an opportunity for a Python package?
 
 
-## Techincal: source control
+## Technical: source control
 
 - **Example** if you want to avoid sensitive data in your Jupyter output cells:
 
@@ -388,11 +388,11 @@ My current/past informatics efforts at BCM and elsewhere:
 - Clinical/translational science: www.ctph-texas.org
 - Datathon efforts[^datathon]
 - Phenotype reusability[^cipher]^,^[^portable]
-- ML for phenotyping[^nate]^,^[^justine]
+- ML for phenotyping[^Nate]^,^[^Justine]
 
-[^nate]: Stud Health Technol Inform. 2019;264:133-137.
+[^Nate]: Stud Health Technol Inform. 2019;264:133-137.
 
-[^justine]: JCO Clin Cancer Inform. 2020;4:749-756.
+[^Justine]: JCO Clin Cancer Inform. 2020;4:749-756.
 
 [^cosmos]: J Am Med Inform Assoc. 2025;32(1):227--229.
 
