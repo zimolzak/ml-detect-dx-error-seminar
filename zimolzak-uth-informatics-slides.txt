@@ -35,7 +35,8 @@ National Academies Press. https://doi.org/10.17226/21794.
 E-triggers:
 : rules-based algorithms using EHR data to flag possible MODs
 
-- Limitations: low predictive value; built from *a priori* rules, may miss signals
+- Limitations: low predictive value; built from *a priori* rules, may
+  miss signals
 
 - Opportunity: Augment with data-driven ML
 
@@ -60,9 +61,11 @@ FIXME ref 2
 
 ![paper title](img/papertitle.png)\
 
-- Determine whether ML can enhance e-trigger performance to identify missed opportunities in diagnosis (MODs)
+- Determine whether ML can enhance e-trigger performance to identify
+  missed opportunities in diagnosis (MODs)
 
-- Emulate human reviewers at larger scale. (*Detect* possible MOD afterwards. *Not* predict MOD in the ED!)
+- Emulate human reviewers at larger scale. (*Detect* possible MOD
+  afterwards. *Not* predict MOD in the ED!)
 
 
 # Methods
@@ -80,7 +83,8 @@ FIXME ref 2
 
 - Inclusion: ED visits for dizziness/vertigo + stroke risk factors
 
-- Outcome: hospitalization for stroke or TIA within 30 days after ED discharge
+- Outcome: hospitalization for stroke or TIA within 30 days after ED
+  discharge
 
 - Timeframe: 2016--2020
 
@@ -91,14 +95,17 @@ FIXME ref 2
 
 - Outcome: hospitalization within 10 days after ED discharge
 
-- Examples of missed diagnoses: cholangitis, cholecystitis, infectious colitis
+- Examples of missed diagnoses: cholangitis, cholecystitis, infectious
+  colitis
 
 
 ## Data sources & labeling
 
-- Data: Structured EHR from index ED visit and subsequent hospital data
+- Data: Structured EHR from index ED visit and subsequent hospital
+  data
 
-- Random sample of trigger-positive records reviewed by trained clinicians using standardized instrument
+- Random sample of trigger-positive records reviewed by trained
+  clinicians using standardized instrument
 
 - Labeled records split into training and test sets
 
@@ -124,7 +131,8 @@ FIXME ref 2
 
 - Tools: Python 3.7.4; `scipy`, `numpy`, `scikit-learn`
 
-- Performance metrics: positive predictive value (PPV) with 95% Wald CI
+- Performance metrics: positive predictive value (PPV) with 95% Wald
+  CI
 
 
 # Results
@@ -223,11 +231,14 @@ Health systems can use ML-enhanced e-triggers to:
 
 ## Takeaway/Conclusions
 
-- ML can markedly improve rules-based e-triggers for detecting missed diagnostic opportunities
+- ML can markedly improve rules-based e-triggers for detecting missed
+  diagnostic opportunities
 
-- Offers scalable approach to identify diagnostic errors and reduce manual review burden
+- Offers scalable approach to identify diagnostic errors and reduce
+  manual review burden
 
-- Promising tool for research and quality improvement, pending broader validation
+- Promising tool for research and quality improvement, pending broader
+  validation
 
 
 # Limitations
@@ -236,7 +247,8 @@ Health systems can use ML-enhanced e-triggers to:
 
 - Time/resource cost to prepare structured variables
 
-- Small number of expert-labeled records limits model learning and test precision
+- Small number of expert-labeled records limits model learning and
+  test precision
 
 - Models used only structured data: may miss signals in clinical notes
 
@@ -276,14 +288,15 @@ FIXME
 
 - Statistical thresholds: bivariate preselection $P < 0.10$
 
-- Models trained on clinician-labeled gold standard; PPVs pooled across train/test due to small sample
+- Models trained on clinician-labeled gold standard; PPVs pooled
+  across train/test due to small sample
 
 - CIs computed as 95% Wald intervals
 
 
 ## Acknowledgments & funding
 
-- VA data infrastructure and clinician reviewers
+VA data infrastructure and clinician reviewers
 
 
 ## Questions
