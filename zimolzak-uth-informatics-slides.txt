@@ -317,30 +317,92 @@ doi:10.1001/jamanetworkopen.2024.31982
 
 ## Limitations
 
-- Time/resource cost to prepare structured variables
+- Time/resource cost to prepare structured variables: **feature
+  engineering.**[^engineer] We also *deliberately chose* which
+  features to prepare, based on clinical knowledge.
+
+[^engineer]: Pedro Domingos. *Commun.\ ACM* 55(10) October 2012:
+78--87. doi:10.1145/2347736.2347755
 
 - Small number of expert-labeled records limits model learning and
-  test precision
+  test precision. (Time/resource cost again)
 
-- Models used only structured data: may miss signals in clinical notes
+- Models used only structured data: may miss signals in clinical notes.
 
-- Single-system (VA) data; requires external validation
-
-
-## Technical challenges 
-
-FIXME
+- Single-system (VA) data; requires external validation.
 
 
-## Other BCM Informatics
+## Technical challenges
 
-FIXME
+Air-gapped research analysis environment: no Internet.
+
+- VA is mostly familiar with SQL $\to$ SAS workflow for analysis
+- No usual ML toolkits available out of the box
+- Apply for "development workspace"
+- Manual upload of Anaconda/Python packages (March 2020)
+
+This was before Melax Tech (as far as I know!)
 
 
-## Contact
+## Techincal: source control
+
+- Source code control, preservation, reproducibility: learned a lot about `git-bundle`!
+
+- Meticulous review for sensitive information in `ipynb` files. Is there an opportunity for a Python package?
+
+
+## Techincal: source control
+
+- **Example** if you want to avoid sensitive data in your Jupyter output cells:
+
+```python
+# Hard to remember each time:
+print(patient_lab_results.loc[
+    :,
+    patient_lab_results.columns != ‘PatientSSN’
+])
+
+# What if this just worked?
+print(patient_lab_results)
+```
+
+- **But beware** identifiers *in the code itself* (not outputs):
+
+```sql
+SELECT * FROM LAB_RESULTS WHERE PatientSSN = 123456789
+```
+
+
+## Technical challenges
+
+- Multiple "hops" to log on remotely (especially important during pandemic)
+
+- Limited hardware capabilities. This is evolving, but additional access request is/was needed for different hardware environment.
+
+
+## Thank you! and "See also"
+
+My current/past informatics efforts at BCM and elsewhere:
+
+- Epic Cosmos efforts[^cosmos]
+- Clinical/translational science: www.ctph-texas.org
+- Datathon efforts[^datathon]
+- Phenotype reusability[^cipher]^,^[^portable]
+- ML for phenotyping[^nate]^,^[^justine]
+
+[^nate]: Stud Health Technol Inform. 2019;264:133-137.
+
+[^justine]: JCO Clin Cancer Inform. 2020;4:749-756.
+
+[^cosmos]: J Am Med Inform Assoc. 2025;32(1):227--229.
+
+[^cipher]: J Am Med Inform Assoc. 2024;31(5):1126-1134.
+
+[^portable]: BMJ Health Care Inform. 2022;29(1):e100565.
+
+[^datathon]: J Clin Transl Sci. 2022;6(1):e125.
+
 
 **zimolzak@bcm.edu**
 
-Source for this talk:
-
-github.com/zimolzak/ml-detect-dx-error-seminar
+Source for this talk: github.com/zimolzak/ml-detect-dx-error-seminar
