@@ -16,7 +16,9 @@ aspectratio: 149
 
 ## Background: electronic triggers (e-triggers)
 
-People have studied management errors. Example. FIXME
+People have studied management errors. Example.[^mgt]
+
+[^mgt]: FIXME
 
 - What about diagnosis?
 
@@ -30,10 +32,21 @@ People have studied management errors. Example. FIXME
 National Academies Press. https://doi.org/10.17226/21794.
 
 
+## Background: problem
+
+- Diagnostic errors cause substantial patient harm
+
+- Monitoring strategies[^dxbasic] are underdeveloped
+
+- Manual chart review is time-consuming and not scalable
+
+[^dxbasic]: FIXME reference 1
+
+
 ## Diagnostic e-triggers
 
 E-triggers:
-: rules-based algorithms using EHR data to flag possible MODs
+: Rules-based algorithms using EHR data to flag possible MODs
 
 - Limitations: low predictive value; built from *a priori* rules, may
   miss signals
@@ -41,20 +54,11 @@ E-triggers:
 - Opportunity: Augment with data-driven ML
 
 
-## Background: problem
-
-- Diagnostic errors cause substantial patient harm
-
-- Monitoring strategies are underdeveloped
-
-- Manual chart review is time-consuming and not scalable
-
-FIXME reference 1
-
-
 ## Electronic detection (more)
 
-FIXME ref 2
+AI option[^aimod]
+
+[^aimod]: FIXME ref 2
 
 
 ## Objectives
@@ -293,23 +297,39 @@ FIXME
 - CIs computed as 95% Wald intervals
 
 
-## Acknowledgments & funding
+## Funding
 
-VA data infrastructure and clinician reviewers
+Agency for Healthcare Research and Quality: **R01 HS027363**
+
+Partial funding:
+
+- Houston VA HSR&D Center for Innovations in Quality, Effectiveness and Safety (CIN 13-413)
+
+- VA National Center for Patient Safety
+
+- AHRQ R01 HS028595
+
+- AHRQ R18 HS029347
 
 
-## Questions
+
+
+
+## Contact
 
 zimolzak@bcm.edu
 
 github.com/zimolzak/ml-detect-dx-error-seminar
 
+Coauthors:
 
-## 32
-
-FIXME
-
-
-## 33
-
-FIXME
+- Li Wei
+- Usman Mir
+- Ashish Gupta
+- Viralkumar Vaghani
+- Adel Hassan
+- Devika Subramanian (Rice Univ.)
+    - Max Yu
+    - Angela Wu
+    - Justin Mower
+- Hardeep Singh
