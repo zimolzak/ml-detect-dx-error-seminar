@@ -19,13 +19,16 @@ aspectratio: 149
 Management errors are often what springs to mind when discussing
 medical error.
 
-- *E.g.,* many studies of
-adverse drug events[^classen] and medication errors[^bates]^,^[^koppelRole]
-
-[^classen]: Classen *et al. JAMA.* 1991;266(20):2847--2851.
+- *E.g.,* many studies of adverse drug events[^classen] and medication
+errors[^bates]^,^[^koppelRole]
 
 - Or "retract and reorder" as a signal of
 wrong-patient electronic orders.[^mgt]^,^[^rapid]
+
+- But what if the treatment, *etc.* is ordered correctly, but the
+  **diagnosis** was wrong?
+
+[^classen]: Classen *et al. JAMA.* 1991;266(20):2847--2851.
 
 [^koppelRole]: Koppel *et al. JAMA.* 2005;293(10):1197--1203.
 
@@ -34,9 +37,6 @@ wrong-patient electronic orders.[^mgt]^,^[^rapid]
 [^rapid]: Koppel *et al. JAMIA.* 2008;15(4):461--465.
 
 [^mgt]: Adelman *et al. JAMIA.* 2012;20(2):305--310.
-
-- But what if the treatment, *etc.* is ordered correctly, but the
-  **diagnosis** was wrong?
 
 
 ## The diagnostic process[^national]
@@ -69,9 +69,9 @@ Example:[^trigExample]
 
 ## Diagnostic electronic triggers: helpful but imperfect
 
-- Tend to low predictive values: 50--70%,[^trigExample] or sometimes lower
-  (9--16%),[^primary] depending on the trigger design. In other words, not all trigger-positive cases are
-  true errors.
+- Tend to low predictive values: 50--70%,[^trigExample] or sometimes
+  lower (9--16%),[^primary] depending on the trigger design. In other
+  words, not all trigger-positive cases are true errors.
 
 [^primary]: Singh *et al. Arch Intern Med.* 2007;167(3):302--308.
 
@@ -80,19 +80,18 @@ Example:[^trigExample]
 - Manual chart review is time-consuming and not scalable.
 
 
-
 ## Objectives
 
 ![paper title](img/papertitle.png)\
 
 Hypothesis:
-: We can improve e-trigger performance (identifying MODs) by considering multiple additional
-EHR variables, moving beyond manually designed rules.
+: We can improve e-trigger performance (identifying MODs) by
+considering multiple additional EHR variables, moving beyond manually
+designed rules.
 
 - Goal: emulate human reviewers at larger scale. Detect possible
-missed
-opportunities in diagnosis
- **afterwards.** Not **predicting** in the ED!
+missed opportunities in diagnosis **afterwards.** Not **predicting**
+in the ED!
 
 
 # Methods
@@ -113,7 +112,8 @@ opportunities in diagnosis
 
 [^revised]: Singh *et al. Diagnosis.* 2019;6(4):315--323.
 
-- Machine learning models trained and tested on structured EHR variables
+- Machine learning models trained and tested on structured EHR
+  variables
 
 - Flow: EHR $\to$ e-trigger $\to$ reviewer. "Two-stage filter."
 
@@ -155,8 +155,9 @@ opportunities in diagnosis
 
 - Abdominal pain model: 153 candidate variables
 
-- Types: demographics, vitals, labs, orders, visit times, risk
-  factors. Details in eTable 1 from paper Supplement,[^mainPaper] or in code.[^mainGH]
+- Types: demographics, vitals, labs, orders (imaging and
+  consultations), visit times, risk factors (past diagnoses). Details
+  in eTable 1 from paper Supplement,[^mainPaper] or in code.[^mainGH]
 
 [^mainPaper]: Zimolzak *et al. JAMA Netw Open.* 2024;7(9):e2431982.
 
@@ -282,8 +283,8 @@ Health systems can use ML-enhanced e-triggers to:
 
 ## Takeaway/Conclusions
 
-- ML can improve the positive predictive value of rules-based e-triggers for detecting missed
-  diagnostic opportunities.
+- ML can improve the positive predictive value of rules-based
+  e-triggers for detecting missed diagnostic opportunities.
 
 - Offers scalable approach to identify diagnostic errors and reduce
   manual review burden
@@ -304,15 +305,12 @@ Partly supported by:
 - AHRQ R18 HS029347
 
 Andrew Zimolzak, **Li Wei, Usman Mir, Ashish Gupta, Viral Vaghani,
-Devika Subramanian,[^students] Hardeep Singh.** Machine Learning to Enhance
-Electronic Detection of Diagnostic Errors. *JAMA Netw Open.*
+Devika Subramanian,[^students] Hardeep Singh.** Machine Learning to
+Enhance Electronic Detection of Diagnostic Errors. *JAMA Netw Open.*
 2024;7(9):e2431982. Published 2024 Sep 3.
 doi:10.1001/jamanetworkopen.2024.31982
 
 [^students]: with Adel Hassan, Max Yu, Angela Wu, Justin Mower
-
-
-
 
 
 # Additional informatics aspects
@@ -334,14 +332,9 @@ doi:10.1001/jamanetworkopen.2024.31982
 FIXME
 
 
-
-
 ## Other BCM Informatics
 
-
 FIXME
-
-
 
 
 ## Contact
