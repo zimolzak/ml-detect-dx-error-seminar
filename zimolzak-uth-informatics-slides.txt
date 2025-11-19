@@ -23,11 +23,11 @@ People have studied management errors. Example.
 - Opportunity: augment with data-driven ML
 
 
-## Diagnostic process[^nasem]
+## Diagnostic process[^national]
 
 ![diagnostic process](img/dxprocess.png)\
 
-[^nasem]: National Academies of Sciences, Engineering, and Medicine
+[^national]: National Academies of Sciences, Engineering, and Medicine
 2015. *Improving Diagnosis in Health Care.* Washington, DC: The
 National Academies Press. https://doi.org/10.17226/21794.
 
@@ -58,8 +58,6 @@ FIXME
 
 
 # Methods
-
-
 
 ## Study design: overview
 
@@ -214,17 +212,17 @@ FIXME
 
 # Technical challenges
 
-## CHAL 1
+## Challenges 1
 
 FIXME
 
 
-## CHAL 2
+## Challenges 2
 
 FIXME
 
 
-## CHAL 3
+## Challenges 3
 
 FIXME
 
