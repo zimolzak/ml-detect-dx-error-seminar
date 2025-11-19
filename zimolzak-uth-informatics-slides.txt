@@ -148,8 +148,6 @@ FIXME ref 2
 
 - Reviewer-identified MODs: 39/82 (PPV 48%; 95% CI 37--58)
 
-- [Image placeholder: small bar chart]
-
 
 ## ML results: dizziness cohort
 
@@ -170,16 +168,12 @@ FIXME ref 2
 
 - Reviewer-identified MODs: 31/104 (PPV 30%; 95% CI 21--39)
 
-- [Image placeholder: small bar chart]
-
 
 ## ML results: abdominal pain cohort
 
 - ML correctly identified 26/31 true MODs and 71/73 negatives
 
 - Reported PPV 93% (95% CI 83--100)
-
-- [Image placeholder: confusion matrix sketch]
 
 
 ## Comparative table: rules vs ML (summary)
