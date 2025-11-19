@@ -1,13 +1,10 @@
 .PHONY: all clean
 
-files = sbmi-talk-2025-abstract.pdf zimolzak-uth-informatics-slides.pdf
+files = zimolzak-uth-informatics-slides.pdf
 
 imgdeps = img/dxprocess.png img/studyflow-crop.png img/papertitle.png
 
 all: $(files)
-
-sbmi-talk-2025-abstract.pdf: sbmi-talk-2025-abstract.txt
-	pandoc -o $@ $<
 
 zimolzak-uth-informatics-slides.pdf: zimolzak-uth-informatics-slides.txt $(imgdeps)
 	pandoc -t beamer $< -o $@
