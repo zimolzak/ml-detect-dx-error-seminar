@@ -14,16 +14,32 @@ aspectratio: 149
 
 # Introduction
 
-## Background: electronic triggers (e-triggers)
+## Background: EHRs to study medical error
 
-People have studied management errors. Example.[^mgt]
+Management errors are often what springs to mind when discussing
+medical error.
 
-[^mgt]: FIXME
+- *E.g.,* many studies of
+adverse drug events[^classen] and medication errors[^bates]^,^[^koppelRole]
 
-- What about diagnosis?
+[^classen]: Classen *et al. JAMA.* 1991;266(20):2847--2851.
+
+- Or "retract and reorder" as a signal of
+wrong-patient electronic orders.[^mgt]^,^[^rapid]
+
+[^koppelRole]: Koppel *et al. JAMA.* 2005;293(10):1197--1203.
+
+[^bates]: Bates *et al. JAMA.* 1998;280(15):1311--1316.
+
+[^rapid]: Koppel *et al. JAMIA.* 2008;15(4):461--465.
+
+[^mgt]: Adelman *et al. JAMIA.* 2012;20(2):305--310.
+
+- But what if the treatment, *etc.* is ordered correctly, but the
+  **diagnosis** was wrong?
 
 
-## Diagnostic process[^national]
+## The diagnostic process[^national]
 
 ![diagnostic process](img/dxprocess.png)\
 
@@ -32,44 +48,51 @@ People have studied management errors. Example.[^mgt]
 National Academies Press. https://doi.org/10.17226/21794.
 
 
-## Background: problem
+## To study diagnostic error, first we must find it.
 
-- Diagnostic errors cause substantial patient harm
-
-- Monitoring strategies[^dxbasic] are underdeveloped
-
-- Manual chart review is time-consuming and not scalable
-
-[^dxbasic]: FIXME reference 1
-
-
-## Diagnostic e-triggers
+Diagnostic errors cause substantial patient harm, but
+monitoring strategies are underdeveloped.[^national]
 
 E-triggers:
-: Rules-based algorithms using EHR data to flag possible MODs
+: Rules-based algorithms using EHR data to flag possible **missed
+opportunities in diagnosis** (MODs)
 
-- Limitations: low predictive value; built from *a priori* rules, may
-  miss signals
+Example:[^trigExample]
 
-- Opportunity: Augment with data-driven ML
+- Age 40--75 years,
+- **and** iron deficiency anemia (several lab tests),
+- **and** no other cause, terminal illness, *etc.,*
+- **and** no follow-up (colonoscopy) performed in reasonable time.
+
+[^trigExample]: Murphy *et al. BMJ Qual Saf.* 2014;23(1):8.
 
 
-## Electronic detection (more)
+## Diagnostic electronic triggers: helpful but imperfect
 
-AI option[^aimod]
+- Tend to low predictive values: 50--70%,[^trigExample] or sometimes lower
+  (9--16%),[^primary] depending on the trigger design. In other words, not all trigger-positive cases are
+  true errors.
 
-[^aimod]: FIXME ref 2
+[^primary]: Singh *et al. Arch Intern Med.* 2007;167(3):302--308.
+
+- Built from *a priori* rules, so they may miss cases of error, too.
+
+- Manual chart review is time-consuming and not scalable.
+
 
 
 ## Objectives
 
 ![paper title](img/papertitle.png)\
 
-- Determine whether ML can enhance e-trigger performance to identify
-  missed opportunities in diagnosis (MODs)
+Hypothesis:
+: We can improve e-trigger performance (identifying MODs) by considering multiple additional
+EHR variables, moving beyond manually designed rules.
 
-- Emulate human reviewers at larger scale. (*Detect* possible MOD
-  afterwards. *Not* predict MOD in the ED!)
+- Goal: emulate human reviewers at larger scale. Detect possible
+missed
+opportunities in diagnosis
+ **afterwards.** Not **predicting** in the ED!
 
 
 # Methods
@@ -79,16 +102,23 @@ AI option[^aimod]
 - Retrospective cohort analysis using VA national EHR (>20M
   patients)
 
-- Two high-risk ED cohorts identified by rules-based e-triggers
+- Two high-risk ED cohorts identified by rules-based e-triggers. These
+  rules were developed by an expert panel.[^Vaghani]
 
-- Expert clinician review provided criterion labels (MOD vs no MOD)
+[^Vaghani]: Vaghani *et al. JAMA Intern Med.* 2025;185(2):143--151.
 
-- ML models trained and tested on structured EHR variables
+- Expert clinician review provided criterion labels (MOD vs.\ no MOD)
+  using standardized instrument developed from prior work (the Revised
+  Safer Dx Instrument).[^revised]
 
-- Flow: EHR $\to$ e-trigger $\to$ reviewer
+[^revised]: Singh *et al. Diagnosis.* 2019;6(4):315--323.
+
+- Machine learning models trained and tested on structured EHR variables
+
+- Flow: EHR $\to$ e-trigger $\to$ reviewer. "Two-stage filter."
 
 
-## E-trigger 1: dizziness + stroke risk
+## E-trigger 1: dizziness + stroke risk factors
 
 - Inclusion: ED visits for dizziness/vertigo + stroke risk factors
 
@@ -118,18 +148,36 @@ AI option[^aimod]
 
 - Labeled records split into training and test sets
 
-- IRB approval; waiver of consent
 
-
-## Variables used for ML
+## Structured EHR variables for ML
 
 - Dizziness model: 148 candidate variables
 
 - Abdominal pain model: 153 candidate variables
 
-- Types: demographics, vitals, labs, orders, visit times, risk factors
+- Types: demographics, vitals, labs, orders, visit times, risk
+  factors. Details in eTable 1 from paper Supplement,[^mainPaper] or in code.[^mainGH]
 
-- Preselection via bivariate tests (t-test or $\chi^2$), $P < 0.10$
+[^mainPaper]: Zimolzak *et al. JAMA Netw Open.* 2024;7(9):e2431982.
+
+[^mainGH]: github.com/zimolzak/ml-detect-diagnostic-safety
+
+- Preselection via bivariate tests (t-test or $\chi^2$), $P < 0.10$.
+
+
+## ML features selected
+
+18 and 31 variables (dizziness and abdominal pain, respectively)
+remained in final models.
+
+- ED duration
+- Time from ED to inpatient admission
+- HR, BP, RR, pain, temperature (min, max, count, first; for ED and inpatient)
+- Ethnicity
+- CT scan ordered (yes/no)
+- CT scan abnormal (yes/no)
+- WBC, glucose, potassium, chloride, amylase
+- Prior ICD code cholecystitis, or cerebral aneurysm
 
 
 ## Machine learning methods
@@ -150,37 +198,35 @@ AI option[^aimod]
 
 - Rules-based flagged: 82 reviewed records
 
-- Reviewer-identified MODs: 39/82 (PPV 48%; 95% CI 37--58)
+- Reviewer-identified MODs: 39/82 (PPV **48%**; 95% CI 37--58)
 
 
 ## ML results: dizziness cohort
 
-- Best ML (random forest) performance:
+Best ML (random forest) performance:
 
-  - Correctly identified 36/39 true MODs
+- Correctly identified 36/39 true MODs
   
-  - Correctly identified 40/43 negatives
+- Correctly identified 40/43 negatives
   
-  - PPV 92% (95% CI 84--100)
-
-- ML reduced manual review burden substantially
+- PPV **92%** (95% CI 84--100)
 
 
 ## Label counts: abdominal pain cohort
 
 - Rules-based flagged: 104 reviewed records
 
-- Reviewer-identified MODs: 31/104 (PPV 30%; 95% CI 21--39)
+- Reviewer-identified MODs: 31/104 (PPV **30%**; 95% CI 21--39)
 
 
 ## ML results: abdominal pain cohort
 
 - ML correctly identified 26/31 true MODs and 71/73 negatives
 
-- Reported PPV 93% (95% CI 83--100)
+- PPV **93%** (95% CI 83--100)
 
 
-## Comparative table: rules vs ML (summary)
+## Comparative table: rules vs.\ ML (summary)
 
 E-trigger            | True+/Total | PPV (CI)
 ---------------------|:-----------:|---------
@@ -203,9 +249,9 @@ E-trigger            | True+/Total | PPV (CI)
 
 ## Interpretation: key findings
 
-- ML substantially increased PPV of e-triggers for both cohorts
+- ML substantially increased PPV of e-triggers for both cohorts.
 
-- ML models approximated clinician labels with high accuracy
+- ML models approximated clinician labels with high accuracy.
 
 - Enables more efficient, scalable monitoring of diagnostic errors
 
@@ -218,7 +264,8 @@ Health systems can use ML-enhanced e-triggers to:
 
 - Monitor diagnostic safety at scale
 
-- Support quality improvement and research
+- Support quality improvement and research: **learn** from missed
+  opportunities and apply **improvement** strategies.
 
 
 ## Future directions
@@ -229,13 +276,14 @@ Health systems can use ML-enhanced e-triggers to:
 
 - Validate models in external, independent populations
 
-- Explore implementation workflows for real-time monitoring
+- Explore implementation workflows for real-time monitoring.
+  (Remember: *not* a point-of-care alert or ED decision support)
 
 
 ## Takeaway/Conclusions
 
-- ML can markedly improve rules-based e-triggers for detecting missed
-  diagnostic opportunities
+- ML can improve the positive predictive value of rules-based e-triggers for detecting missed
+  diagnostic opportunities.
 
 - Offers scalable approach to identify diagnostic errors and reduce
   manual review burden
@@ -244,7 +292,30 @@ Health systems can use ML-enhanced e-triggers to:
   validation
 
 
-# Limitations
+## Acknowledgments
+
+Agency for Healthcare Research and Quality: **R01 HS027363**
+
+Partly supported by:
+
+- Houston VA HSR&D CIN 13-413
+- VA National Center for Patient Safety
+- AHRQ R01 HS028595
+- AHRQ R18 HS029347
+
+Andrew Zimolzak, **Li Wei, Usman Mir, Ashish Gupta, Viral Vaghani,
+Devika Subramanian,[^students] Hardeep Singh.** Machine Learning to Enhance
+Electronic Detection of Diagnostic Errors. *JAMA Netw Open.*
+2024;7(9):e2431982. Published 2024 Sep 3.
+doi:10.1001/jamanetworkopen.2024.31982
+
+[^students]: with Adel Hassan, Max Yu, Angela Wu, Justin Mower
+
+
+
+
+
+# Additional informatics aspects
 
 ## Limitations
 
@@ -258,78 +329,25 @@ Health systems can use ML-enhanced e-triggers to:
 - Single-system (VA) data; requires external validation
 
 
-## Lim 2
+## Technical challenges 
 
 FIXME
 
 
-## LIM 3
+
+
+## Other BCM Informatics
+
 
 FIXME
-
-
-# Technical challenges
-
-## Challenges 1
-
-FIXME
-
-
-## Challenges 2
-
-FIXME
-
-
-## Challenges 3
-
-FIXME
-
-
-# Other BCM Informatics
-
-## Appendix/Methods details (optional)
-
-- Statistical thresholds: bivariate preselection $P < 0.10$
-
-- Models trained on clinician-labeled gold standard; PPVs pooled
-  across train/test due to small sample
-
-- CIs computed as 95% Wald intervals
-
-
-## Funding
-
-Agency for Healthcare Research and Quality: **R01 HS027363**
-
-Partial funding:
-
-- Houston VA HSR&D Center for Innovations in Quality, Effectiveness and Safety (CIN 13-413)
-
-- VA National Center for Patient Safety
-
-- AHRQ R01 HS028595
-
-- AHRQ R18 HS029347
-
 
 
 
 
 ## Contact
 
-zimolzak@bcm.edu
+**zimolzak@bcm.edu**
+
+Source for this talk:
 
 github.com/zimolzak/ml-detect-dx-error-seminar
-
-Coauthors:
-
-- Li Wei
-- Usman Mir
-- Ashish Gupta
-- Viralkumar Vaghani
-- Adel Hassan
-- Devika Subramanian (Rice Univ.)
-    - Max Yu
-    - Angela Wu
-    - Justin Mower
-- Hardeep Singh
